@@ -5,10 +5,13 @@ const init = function () {
 };
 
 const submit = function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+
   let contactName = document.getElementById("contactName").value;
   let contactNumber = document.getElementById("contactNumber").value;
   let email = document.getElementById("email").value;
-  let vehilceModel = document.getElementById("vehilceModel").value;
+  let vehilceModel = document.getElementById("vehicleModel").value;
   let vehicleReg = document.getElementById("vehicleReg").value;
   let mileage = document.getElementById("mileage").value;
   let postalCode = document.getElementById("postalCode").value;
@@ -27,9 +30,6 @@ const submit = function (e) {
     postalCode,
     comments,
   });
-
-  e.preventDefault();
-  e.stopPropagation();
 
   let status = document.getElementById("status");
 
